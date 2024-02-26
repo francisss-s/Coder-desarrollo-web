@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Inicio Sesion</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Gestor Economico
+        </h1>
+        <img class="logo" src="../img/logo.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./conocenos.html">Conocenos</a></li>
+                <li><a href="./servicios.html">Nuestros Servicios</a></li>
+                <li><a href="./contactanos.html">Contactanos</a></li>
+                <li class="selected">Iniciar Sesion</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="sesion">
+            <h2>
+                Iniciar Sesion
+            </h2>
+            <form  action="enviaSesion.php">
+                <div>
+                    <label for="correo">Correo</label>
+                    <input type="email" name="correo" id="correo" placeholder="Correo">
+                </div>
+                <div>
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña">
+                </div>
+                <div>
+                    <input class="subir" type="submit" value="Iniciar Sesion">
+                </div>
+            </form>
+            <p>Para recuperar tu contraseña, haz clic  <a class="Recuperar" href=""> aquí.</a></p>
+            <h3>Aun no tienes cuenta?</h3>
+            <a class="crear-cuenta" href="">Crear cuenta</a>
+        </section>
+    </main>
+    <footer>
+        <h3>Redes Sociales
+        </h3>
+        <ul class="redes">
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Instagram</a></li>
+            <li><a href="">linkedin</a></li>
+        </ul>
+        <p>
+            Derechos Reservados &copy; 2020
+        </p>
+    </footer>
+</body>
+</html>

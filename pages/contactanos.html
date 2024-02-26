@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Contactanos</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Gestor Economico
+        </h1>
+        <img class="logo" src="../img/logo.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./conocenos.html">Conocenos</a></li>
+                <li><a href="./servicios.html">Nuestros Servicios</a></li>
+                <li class="selected">Contactanos</li>
+                <li><a href="./inicia_sesion.html">Iniciar Sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="contactanos">
+        <section>
+            <h2>Contactanos</h2>
+            <img class="contactanos-img" src="../img/contactanos.png" alt="imagen sobre como contactarnos">
+            <form  action="enviaContacto.php">
+            
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                </div>
+                <div>
+                    <label for="correo">Correo</label>
+                    <input type="email" name="correo" id="correo" placeholder="Correo">
+                </div>
+                <div>
+                    <label for="motivo">Mensaje</label>
+                    <select name="motivo" id="motivo" cols="30" rows="10" placeholder="Mensaje">
+                        <option value="1">Sugerencia</option>
+                        <option value="2">Queja</option>
+                        <option value="3">Otro</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                </div>
+                    
+                    <input class="subir" type="submit" value="Enviar">
+                
+            </form>
+        </section>
+        
+    </main>
+    <footer>
+        <h3>Redes Sociales</h3>
+        <ul class="redes">
+          <li><a href="">Facebook</a></li>
+          <li><a href="">Instagram</a></li>
+          <li><a href="">linkedin</a></li>
+        </ul>
+        <p>Derechos Reservados &copy; 2024</p>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,459 @@
+:root {
+  --color-primario: #4b527e;
+  --color-secundario: #2e4374;
+  --color-terciario: #7c81ad;
+  --color-acentuado: #e5c3a6;
+  --color-hover: #000000;
+  --font-color-primario: white;
+  --font-color-secundario: #575757;
+  --font-color-terciario: #000000;
+  --main-font: "Roboto", sans-serif;
+}
+
+/* area general */
+h1 {
+  font-size: 50px;
+  font-family: var(--main-font);
+}
+
+/* Area header */
+header {
+  background-color: var(--color-primario);
+  color: var(--font-color-primario);
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+nav {
+  color: var(--font-color-primario);
+  /* text-align: left; */
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: right;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  text-align: right;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  text-decoration: none;
+  border: 1px solid var(--color-hover);
+  border-radius: 8px;
+  color: var(--font-color-secundario);
+  background-color: var(--color-acentuado);
+  display: block;
+}
+
+nav li a:hover {
+  background-color: var(--color-hover);
+  color: var(--font-color-primario);
+}
+
+nav .selected {
+  text-align: right;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  background-color: var(--color-terciario);
+  text-decoration: none;
+  border: 1px solid var(--color-hover);
+  border-radius: 8px;
+}
+/* fin area header */
+
+/* Area main */
+main {
+  background-color: var(--color-secundario);
+  color: var(--font-color-primario);
+  text-align: center;
+  padding: 20px;
+}
+
+section {
+  background-color: var(--color-terciario);
+  color: var(--font-color-secundario);
+  gap: 20px;
+  height: 20em;
+  padding: 10px;
+}
+
+section h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+section p {
+  font-size: 20px;
+  width: 49%;
+  height: 10em;
+  display: inline-block;
+}
+
+.imagen {
+  width: 49%;
+  height: 15em;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.redes li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.par {
+  background-color: var(--color-secundario);
+  color: #000000;
+  gap: 20px;
+  height: 20em;
+  padding: 10px;
+}
+
+.impar {
+  background-color: var(--color-terciario);
+  color: #000000;
+  gap: 20px;
+  height: 20em;
+  padding: 10px;
+}
+.par .imagen {
+  float: right;
+}
+
+.impar .imagen {
+  float: left;
+}
+
+.par p {
+  float: left;
+}
+
+.impar p {
+  float: right;
+}
+/* conocenos */
+.conocenos section {
+  background-color: var(--color-acentuado);
+  color: var(--font-color-secundario);
+  gap: 20px;
+  height: 20em;
+  margin-bottom: 10px;
+}
+
+.conocenos section h2 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0px;
+}
+
+.conocenos section p {
+  font-size: 20px;
+  width: 100%;
+  height: 10em;
+  display: inline-block;
+  text-align: center;
+}
+
+.conocenos .imagen {
+  width: 49%;
+  height: 15em;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.servicios {
+  background-color: var(--color-secundario);
+  color: var(--font-color-primario);
+  padding: 20px;
+  height: fit-content;
+}
+.servicios section {
+  background-color: var(--color-terciario);
+  color: var(--font-color-secundario);
+  gap: 20px;
+  height: 20em;
+  margin-bottom: 10px;
+  height: fit-content;
+}
+
+.servicios section h2 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0px;
+}
+.servicios section img {
+  width: 50%;
+  height: 15em;
+  border-radius: 8px;
+}
+
+.servicios section p {
+  font-size: 20px;
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+}
+
+/* Contactanos */
+.contactanos section {
+  background-color: var(--color-terciario);
+  color: var(--font-color-secundario);
+  height: fit-content;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.contactanos section h2 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0px;
+}
+
+.contactanos section .contactanos-img {
+  width: 48%;
+  border-radius: 8px;
+  height: 25em;
+}
+
+form {
+  color: var(--font-color-primario);
+  text-align: left;
+  width: 48%;
+  height: fit-content;
+  float: right;
+}
+
+form div {
+  margin: 10px;
+}
+
+form div label {
+  display: block;
+}
+
+form div input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--color-primario);
+  padding: 5px;
+}
+
+form div input:hover {
+  border: 1px solid var(--color-terciario);
+}
+form div input:focus {
+  outline: none;
+  border: 1px solid var(--color-terciario);
+}
+
+form div textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--color-primario);
+  padding: 5px;
+}
+
+form div textarea:hover {
+  border: 1px solid var(--color-terciario);
+}
+
+form div textarea:focus {
+  outline: none;
+  border: 1px solid var(--color-terciario);
+}
+
+form div input[type="submit"] {
+  background-color: var(--color-terciario);
+  color: var(--font-color-primario);
+  border: 1px solid var(--color-terciario);
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+form div input[type="submit"]:hover {
+  background-color: var(--color-hover);
+  border: 1px solid var(--color-hover);
+}
+
+/* inicio sesion */
+.sesion {
+  background-color: var(--color-secundario);
+  color: var(--font-color-primario);
+  padding: 20px;
+  height: fit-content;
+  width: 50%;
+
+  margin: 0 auto;
+}
+
+.sesion form {
+  width: 100%;
+}
+.sesion form div {
+  margin: 10px;
+  width: 100%;
+}
+.sesion p {
+  text-align: center;
+  width: 100%;
+}
+
+
+.Recuperar {
+
+  color: var(--font-color-primario);
+  padding: 10px;
+  border-radius: 8px;
+
+}
+.crear-cuenta {
+  background-color: var(--color-terciario);
+  color: var(--font-color-primario);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* footer */
+footer {
+  background-color: var(--color-primario);
+  color: var(--font-color-terciario);
+  text-align: center;
+  padding: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  header {
+    padding: 20px 10px;
+  }
+  nav ul {
+    float: none;
+  }
+  nav li {
+    display: block;
+    float: none;
+  }
+  nav li a {
+    display: block;
+    text-align: center;
+  }
+  nav .selected {
+    text-align: center;
+  }
+  section {
+    height: fit-content;
+  }
+
+  .par {
+    height: fit-content;
+  }
+  .impar {
+    height: fit-content;
+  }
+  .par .imagen {
+    height: fit-content;
+    width: 100%;
+    float: none;
+    display: block;
+  }
+  .impar .imagen {
+    height: fit-content;
+    width: 100%;
+    float: none;
+    display: block;
+  }
+  .par p {
+    float: none;
+    display: block;
+    height: fit-content;
+    width: 100%;
+  }
+  .impar p {
+    float: none;
+    display: block;
+    height: fit-content;
+    width: 100%;
+  }
+  .servicios section {
+    height: fit-content;
+  }
+
+  .servicios section img{
+    width: 100%;
+    height: fit-content;
+    float: none;
+    display: block;
+  }
+
+  .contactanos {
+    height: fit-content;
+    padding: 0px;
+  }
+
+  .contactanos section {
+    height: fit-content;
+  }
+  .contactanos section .contactanos-img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .contactanos section form {
+    float: none;
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  .contactanos section form div {
+    margin: 5px;
+  }
+  .contactanos section form div label {
+    display: block;
+  }
+  .subir {
+    width: 100%;
+    height: 50px;
+    margin-left: 5px;
+  }
+  #motivo {
+    height: 2em;
+    width: 100%;
+    margin-left: 5px;
+  }
+  .sesion {
+    background-color: var(--color-secundario);
+    color: var(--font-color-primario);
+    padding:0px;
+    height: fit-content;
+    width: 100%;
+    margin: 0;
+  }
+  .sesion form {
+    width: 100%;
+    float: none;
+    height: auto;
+    margin: 0px;
+  }
+
+
+  .sesion form div {
+    width: auto;
+  }
+}
