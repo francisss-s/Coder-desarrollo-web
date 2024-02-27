@@ -9,6 +9,13 @@
   --font-color-terciario: #000000;
   --main-font: "Roboto", sans-serif;
 }
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 /* area general */
 h1 {
@@ -48,6 +55,21 @@ nav ul {
 nav li {
   float: left;
 }
+
+/* Ocultar el input checkbox */
+.menu-toggle {
+  display: none;
+}
+
+/* Estilo básico para el botón del menú */
+.menu-button {
+  display: none;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
 
 nav li a {
   text-align: right;
@@ -93,6 +115,7 @@ section {
   gap: 20px;
   height: 20em;
   padding: 10px;
+  border-radius: 20px;
 }
 
 section h2 {
@@ -109,14 +132,27 @@ section p {
 
 .imagen {
   width: 49%;
-  height: 15em;
+  height: 15em; 
   border-radius: 8px;
   display: inline-block;
+  background-size: cover; 
+  background-position: center; 
 }
 
-.redes li {
-  display: inline-block;
-  margin: 0 10px;
+.redes {
+  list-style: none; 
+  padding: 0; 
+  margin: 5px; 
+  display: inline-flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.redes li a {
+  color: #fff; 
+  text-decoration: none;
+  display: flex; 
+  align-items: center; 
 }
 
 .par {
@@ -154,7 +190,7 @@ section p {
   background-color: var(--color-acentuado);
   color: var(--font-color-secundario);
   gap: 20px;
-  height: 20em;
+  height: fit-content;
   margin-bottom: 10px;
 }
 
@@ -179,39 +215,115 @@ section p {
   display: inline-block;
 }
 
-.servicios {
-  background-color: var(--color-secundario);
+section.comentarios {
+  background-color: var(--color-acentuado);
   color: var(--font-color-primario);
   padding: 20px;
   height: fit-content;
 }
-.servicios section {
-  background-color: var(--color-terciario);
-  color: var(--font-color-secundario);
-  gap: 20px;
-  height: 20em;
-  margin-bottom: 10px;
-  height: fit-content;
-}
-
-.servicios section h2 {
+section.comentarios h2 {
   font-size: 30px;
   text-align: center;
   margin: 0px;
-}
-.servicios section img {
-  width: 50%;
-  height: 15em;
-  border-radius: 8px;
+  color: var(--font-color-secundario);
 }
 
-.servicios section p {
-  font-size: 20px;
+.contenedor_carrusel {
+  margin-top:10px;
+  overflow-x: auto;
+  display: flex;
+}
+
+.carrousel {
+  display: flex; 
+}
+
+.elemento_carrousel {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;  */
+  margin-right: 20px;
+  min-width: 300px;
+  border: #e5c3a6 2px solid;
+  background-color: var(--color-secundario);;
+}
+.user-info {
+  margin:10px;
+  display: flex;
+  align-items: center;
+  
+}
+.elemento_carrousel .user-info .user-image {
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-right: 10px;
+  align-items: right;
+}
+section.comentarios .elemento_carrousel h3{
+  text-align: right;
+}
+
+section.comentarios .elemento_carrousel p {
+  margin:5px;
+  text-align: center;
+  height: 5em;
+  padding:5px;
+}
+
+
+.servicios {
+  display: block;
+  background-color: var(--color-secundario);
+  color: var(--font-color-primario);
+  padding: 20px;
+}
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.servicio {
+  background-color: var(--color-terciario);
+  color: var(--font-color-secundario);
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+  box-sizing: border-box;
+  height: 25em;
+}
+
+.servicio-info{
+  height: fit-content;
+  width: 100%;
+}
+.servicio-imagen {
+  height: 50%;
+
+}
+
+.servicio-info h2 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+
+.servicio-info p {
+  font-size: 16px;
   width: 100%;
   height: fit-content;
-  text-align: center;
+  text-align: justify;
 }
 
+.servicio-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
 /* Contactanos */
 .contactanos section {
   background-color: var(--color-terciario);
@@ -339,8 +451,15 @@ footer {
   text-align: center;
   padding: 20px;
 }
+.red_ico {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
 
-@media screen and (max-width: 400px) {
+
+@media (350px <= width <= 768px) {
   header {
     padding: 20px 10px;
   }
@@ -355,13 +474,32 @@ footer {
     display: block;
     text-align: center;
   }
+
+  .menu-button {
+    display: block; 
+  }
+
+  nav ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out; /
+  }
+
+  .menu-toggle:checked + .menu-button + nav ul {
+    max-height: 500px; 
+    transition: max-height 0.5s ease-in;
+  }
+
+
   nav .selected {
     text-align: center;
   }
   section {
     height: fit-content;
   }
-
+  .conocenos section {
+    height: fit-content !important;
+  }
   .par {
     height: fit-content;
   }
@@ -392,15 +530,10 @@ footer {
     height: fit-content;
     width: 100%;
   }
-  .servicios section {
-    height: fit-content;
-  }
 
-  .servicios section img{
-    width: 100%;
-    height: fit-content;
-    float: none;
-    display: block;
+  .grid-servicios {
+    
+    grid-template-columns: 1fr;
   }
 
   .contactanos {
@@ -455,5 +588,171 @@ footer {
 
   .sesion form div {
     width: auto;
+  }
+
+  .elemento_carrousel {
+    min-width: 250px; 
+    margin-right: 15px; 
+  }
+  .elemento_carrousel .user-info .user-image {
+    width: 40px; 
+    height: 40px;
+  }
+  section.comentarios .elemento_carrousel p {
+    margin: 5px;
+    height: auto; 
+    font-size: 14px; 
+  }
+  .redes {
+    flex-direction: row; 
+    gap: 15px; 
+  }
+}
+
+
+@media (769px <= width <= 1200px) {
+  header {
+    padding: 20px 10px;
+  }
+  nav ul {
+    float: none;
+  }
+  nav li {
+    display: block;
+    float: none;
+  }
+  nav li a {
+    display: block;
+    text-align: center;
+  }
+
+  .menu-button {
+    display: block; 
+  }
+
+  nav ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out; 
+  }
+
+  
+  .menu-toggle:checked + .menu-button + nav ul {
+    max-height: 500px; 
+    transition: max-height 0.5s ease-in; 
+  }
+  nav .selected {
+    text-align: center;
+  }
+  section {
+    min-height: fit-content;
+  }
+  .conocenos section {
+    height: fit-content !important;
+  }
+
+  .par {
+    height: fit-content;
+  }
+  .impar {
+    height: fit-content;
+  }
+  .par .imagen {
+    height: fit-content;
+    width: 100%;
+    float: none;
+    display: block;
+  }
+  .impar .imagen {
+    height: fit-content;
+    width: 100%;
+    float: none;
+    display: block;
+  }
+  .par p {
+    float: none;
+    display: block;
+    height: fit-content;
+    width: 100%;
+  }
+  .impar p {
+    float: none;
+    display: block;
+    height: fit-content;
+    width: 100%;
+  }
+  .grid-servicios {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .contactanos {
+    height: fit-content;
+    padding: 0px;
+  }
+
+  .contactanos section {
+    height: fit-content;
+  }
+  .contactanos section .contactanos-img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .contactanos section form {
+    float: none;
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  .contactanos section form div {
+    margin: 5px;
+  }
+  .contactanos section form div label {
+    display: block;
+  }
+  .subir {
+    width: 100%;
+    height: 50px;
+    margin-left: 5px;
+  }
+  #motivo {
+    height: 2em;
+    width: 100%;
+    margin-left: 5px;
+  }
+  .sesion {
+    background-color: var(--color-secundario);
+    color: var(--font-color-primario);
+    padding:0px;
+    height: fit-content;
+    width: 100%;
+    margin: 0;
+  }
+  .sesion form {
+    width: 100%;
+    float: none;
+    height: auto;
+    margin: 0px;
+  }
+
+  .sesion form div {
+    width: auto;
+  }
+
+  .elemento_carrousel {
+    min-width: 280px; 
+    margin-right: 18px; 
+  }
+  .elemento_carrousel .user-info .user-image {
+    width: 45px; 
+    height: 45px;
+  }
+  section.comentarios .elemento_carrousel p {
+    margin: 5px;
+    height: auto;
+    font-size: 16px; 
+  }
+  .redes {
+    flex-direction: column; 
+    gap: 10px;
   }
 }
