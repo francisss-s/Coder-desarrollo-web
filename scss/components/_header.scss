@@ -63,19 +63,8 @@ header {
                 float: none;
                 width: 100%;
             }
-
-            &:hover {
-                animation: wave 0.5s forwards; // Agregar la animación al hacer hover
-            }
-
-            @keyframes wave {
-                0% {
-                    transform: scaleX(0);
-                }
-                100% {
-                    transform: scaleX(1);
-                }
-            }
+              
+            
         }
 
         & a {
@@ -86,13 +75,16 @@ header {
             background-color: $accent-color;
             text-decoration: none;
             text-align: center;
+            z-index: 1;
 
             &:hover {
                 @include contraste-color($hover-color);
                 background-color: $hover-color;
                 color: $primary-font-color;
+                
             }
 
+            
             @include mq-mobile {
                 text-align: center;
             }
