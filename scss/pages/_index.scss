@@ -1,0 +1,52 @@
+main {
+    background-color: $secondary-color;
+    color: $primary-font-color;
+    text-align: center;
+    padding: 20px;
+  
+    section {
+      background-color: $tertiary-color;
+      color: $secondary-font-color;
+      gap: 20px;
+      min-height: 20em;
+      padding: 20px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+  
+      h2 {
+        font-size: 2em;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 1.2em;
+        width: 45%;
+        margin-bottom: 20px;
+      }
+  
+      .imagen {
+        width: 45%;
+        height: auto; 
+        max-height: 15em;
+        border-radius: 8px;
+        background-size: cover; 
+        background-position: center; 
+      }
+    }
+  }
+  
+  // Responsividad con mixin
+  @include mq-mobile {
+    main section {
+      flex-direction: column;
+  
+      p, .imagen {
+        width: 80%;
+      }
+    }
+  }

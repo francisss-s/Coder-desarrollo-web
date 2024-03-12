@@ -1,0 +1,51 @@
+// Variables
+$primary-color: #BC8034;        // Color principal
+$secondary-color: #9DAEFF;      // Color secundario
+$tertiary-color: #D9CAB3;       // Color terciario
+$accent-color: #3F375C;         // Color de acento
+$hover-color: #98446B;          // Color de hover
+$primary-font-color: #3F375C;   // Color de fuente principal
+$secondary-font-color: black;   // Color de fuente secundario
+$tertiary-font-color: white;    // Color de fuente terciario
+$main-font: "Roboto", sans-serif; // Fuente principal
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+@mixin mq-mobile {
+    @media (min-width:350px) and (max-width: 767px) {
+        @content;
+    }
+}
+  
+@mixin mq-tablet {
+    @media (min-width: 768px) and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin contraste-color($bg){
+    @if (lightness($bg) > 50){
+        color: $secondary-font-color
+    }
+    @else{
+        color: $tertiary-font-color
+    }
+}

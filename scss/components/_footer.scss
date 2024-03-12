@@ -1,0 +1,49 @@
+.footer {
+    background-color: $primary-color;
+    @include contraste-color($primary-color);
+    text-align: center;
+    padding: 20px;
+    font-family: $main-font;
+  
+    &-about {
+      h3, p {
+        @include contraste-color($primary-color);
+      }
+    }
+  
+    & .redes {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin-top: 20px;
+      gap: 15px; // Añadido gap para espaciado entre los elementos de la lista
+  
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          @include contraste-color($primary-color);
+  
+          &:hover {
+            text-decoration: underline;
+            color: $hover-color;
+          }
+  
+          .red_ico {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+  }
+  
+  // Adaptando el footer a diferentes tamaños de pantalla con mixins
+  @include mq-mobile {
+    .footer-redes {
+      flex-direction: row;
+    }
+  }
