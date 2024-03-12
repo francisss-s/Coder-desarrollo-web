@@ -25,37 +25,36 @@
         </nav>
     </header>
     <main class="contactanos">
-        <section>
+        <section class="contactanos-container">
             <h2>Contactanos</h2>
-            <img class="contactanos-img" src="../img/contactanos.png" alt="imagen sobre como contactarnos">
-            <form  action="enviaContacto.php">
-            
+            <div class="contactanos-container-info">
+                <img class="contactanos-container-info-img" src="../img/contactanos.png" alt="imagen sobre cómo contactarnos">
+                <p>¡Estamos aquí para ayudarte! Si tienes alguna pregunta, sugerencia o comentario, no dudes en ponerte en contacto con nosotros a través del formulario a continuación.</p>
+            </div>
+            <form action="enviaContacto.php">
                 <div>
                     <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
                 </div>
                 <div>
                     <label for="correo">Correo</label>
-                    <input type="email" name="correo" id="correo" placeholder="Correo">
+                    <input type="email" name="correo" id="correo" placeholder="Correo" required>
                 </div>
                 <div>
-                    <label for="motivo">Mensaje</label>
-                    <select name="motivo" id="motivo" cols="30" rows="10" placeholder="Mensaje">
-                        <option value="1">Sugerencia</option>
-                        <option value="2">Queja</option>
-                        <option value="3">Otro</option>
+                    <label for="motivo">Motivo</label>
+                    <select name="motivo" id="motivo" required>
+                        <option value="sugerencia">Sugerencia</option>
+                        <option value="queja">Queja</option>
+                        <option value="otro">Otro</option>
                     </select>
                 </div>
                 <div>
                     <label for="mensaje">Mensaje</label>
-                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje" required></textarea>
                 </div>
-                    
-                    <input class="subir" type="submit" value="Enviar">
-                
+                <input class="subir" type="submit" value="Enviar">
             </form>
         </section>
-        
     </main>
     <footer class="footer">
         <div class="container">

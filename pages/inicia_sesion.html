@@ -26,27 +26,26 @@
     </header>
     <main>
         <section class="sesion">
-            <h2>
-                Iniciar Sesion
-            </h2>
-            <form  action="enviaSesion.php">
+            <h2>Iniciar Sesión</h2>
+            <form action="enviaSesion.php">
                 <div>
                     <label for="correo">Correo</label>
-                    <input type="email" name="correo" id="correo" placeholder="Correo">
+                    <input type="email" name="correo" id="correo" placeholder="Correo" required>
                 </div>
                 <div>
                     <label for="contrasena">Contraseña</label>
-                    <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña">
+                    <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required>
                 </div>
                 <div>
-                    <input class="subir" type="submit" value="Iniciar Sesion">
+                    <input class="subir" type="submit" value="Iniciar Sesión">
                 </div>
             </form>
-            <p>Para recuperar tu contraseña, haz clic  <a class="Recuperar" href=""> aquí.</a></p>
-            <h3>Aun no tienes cuenta?</h3>
-            <a class="crear-cuenta" href="">Crear cuenta</a>
+            <p>¿Olvidaste tu contraseña? Haz clic <a class="recuperar" href="#">aquí</a>.</p>
+            <h3>¿Aún no tienes cuenta? <a class="crear-cuenta" href="#">Crear cuenta</a></h3>
+            
         </section>
     </main>
+    
     <footer class="footer">
         <div class="container">
             <div class="footer-about">
