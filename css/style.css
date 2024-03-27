@@ -1,10 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -18,8 +21,8 @@ img {
 }
 
 header {
-  background-color: #BC8034;
-  color: #3F375C;
+  background-color: #bc8034;
+  color: #3f375c;
   text-align: center;
   padding: 20px;
 }
@@ -30,7 +33,7 @@ header.logo {
   display: inline-block;
 }
 header nav {
-  color: #3F375C;
+  color: #3f375c;
   padding: 20px;
 }
 header nav ul {
@@ -63,9 +66,9 @@ header nav li {
   color: black;
   float: left;
   text-decoration: none;
-  border: 1px solid #98446B;
+  border: 1px solid #98446b;
   border-radius: 8px;
-  background-color: #9DAEFF;
+  background-color: #9daeff;
   display: block;
   text-align: center;
   width: 10rem;
@@ -85,20 +88,24 @@ header nav li {
     width: 100%;
   }
 }
+header nav .selected {
+  padding-top: 5px;
+}
 header nav a {
   color: white;
   display: block;
   height: 100%;
   width: 100%;
-  background-color: #3F375C;
+  background-color: #3f375c;
   text-decoration: none;
   text-align: center;
   z-index: 1;
+  padding-top: 5px;
 }
 header nav a:hover {
   color: white;
-  background-color: #98446B;
-  color: #3F375C;
+  background-color: #98446b;
+  color: #3f375c;
 }
 @media (min-width: 350px) and (max-width: 767px) {
   header nav a {
@@ -116,7 +123,7 @@ header .menu-toggle {
 header .menu-button {
   color: white;
   display: none;
-  background-color: #3F375C;
+  background-color: #3f375c;
   padding: 10px;
   margin: 20px;
   cursor: pointer;
@@ -137,13 +144,13 @@ header .menu-toggle:checked + .menu-button + nav ul {
 }
 
 main {
-  background-color: #9DAEFF;
-  color: #3F375C;
+  background-color: #9daeff;
+  color: #3f375c;
   text-align: center;
   padding: 20px;
 }
 main section {
-  background-color: #D9CAB3;
+  background-color: #d9cab3;
   color: black;
   gap: 20px;
   min-height: 20em;
@@ -154,6 +161,7 @@ main section {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  animation: fadeInUp 1.5s ease forwards;
 }
 main section h2 {
   font-size: 2em;
@@ -165,28 +173,51 @@ main section p {
   width: 45%;
   margin-bottom: 20px;
 }
-main section .imagen {
-  width: 45%;
-  height: auto;
+main section img {
+  width: 30rem;
+  height: 15rem;
   max-height: 15em;
   border-radius: 8px;
   background-size: cover;
   background-position: center;
+  object-fit: cover;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  main section img {
+    width: 25rem;
+    height: 10rem;
+  }
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  main section img {
+    width: 25rem;
+    height: 10rem;
+  }
 }
 
 @media (min-width: 350px) and (max-width: 767px) {
   main section {
     flex-direction: column;
   }
-  main section p, main section .imagen {
+  main section p {
     width: 80%;
   }
 }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .conocenos {
-  background-color: #9DAEFF;
+  background-color: #9daeff;
 }
 .conocenos section {
-  background-color: #D9CAB3;
+  background-color: #d9cab3;
   color: black;
   gap: 20px;
   height: fit-content;
@@ -212,7 +243,7 @@ main section .imagen {
 }
 
 .comentarios {
-  background-color: #3F375C;
+  background-color: #3f375c;
   color: white;
   padding: 20px;
   height: fit-content;
@@ -236,9 +267,9 @@ main section .imagen {
   flex-direction: column;
   margin-right: 20px;
   min-width: 300px;
-  border: #D9CAB3 2px solid;
+  border: #d9cab3 2px solid;
   border-radius: 15px;
-  background-color: #9DAEFF;
+  background-color: #9daeff;
 }
 .comentarios .elemento_carrousel .user-info {
   margin: 10px;
@@ -276,7 +307,7 @@ main section .imagen {
 .comentarios .elemento_carrousel p {
   margin: 5px;
   text-align: center;
-  height: 5em;
+  height: fit-content;
   padding: 5px;
 }
 @media (min-width: 350px) and (max-width: 767px) {
@@ -324,6 +355,21 @@ main section .imagen {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
+.servicios .grid-servicios section {
+  opacity: 0;
+}
+.servicios .grid-servicios section:nth-of-type(1) {
+  animation-delay: 0.5s;
+}
+.servicios .grid-servicios section:nth-of-type(2) {
+  animation-delay: 1s;
+}
+.servicios .grid-servicios section:nth-of-type(3) {
+  animation-delay: 1.5s;
+}
+.servicios .grid-servicios section:nth-of-type(4) {
+  animation-delay: 2s;
+}
 @media (min-width: 768px) and (max-width: 1200px) {
   .servicios .grid-servicios {
     grid-template-columns: 1fr 1fr;
@@ -341,12 +387,33 @@ main section .imagen {
 .servicios .servicio-info h2 {
   font-size: 24px;
   margin: 0 0 10px 0;
+  height: 4em;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .servicios .servicio-info h2 {
+    height: 4rem;
+  }
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .servicios .servicio-info h2 {
+    height: 6rem;
+  }
 }
 .servicios .servicio-info p {
   font-size: 16px;
   width: 100%;
-  height: fit-content;
+  height: 13rem;
   text-align: justify;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .servicios .servicio-info p {
+    height: 9rem;
+  }
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .servicios .servicio-info p {
+    height: fit-content;
+  }
 }
 .servicios .servicio-imagen {
   height: 50%;
@@ -380,6 +447,16 @@ main section .imagen {
   }
 }
 
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .contactanos {
   padding: 20px;
   text-align: center;
@@ -398,6 +475,11 @@ main section .imagen {
 .contactanos-container-info p {
   font-size: 16px;
   width: fit-content;
+}
+.contactanos-container-info-img {
+  object-fit: cover;
+  width: 20rem;
+  height: 15rem;
 }
 @media (min-width: 350px) and (max-width: 767px) {
   .contactanos-container-info-img {
@@ -435,8 +517,8 @@ main section .imagen {
 }
 .contactanos-container form .subir {
   padding: 10px;
-  background-color: #BC8034;
-  color: white;
+  background-color: #bc8034;
+  color: black;
   border: none;
   border-radius: 5px;
   font-size: 18px;
@@ -448,8 +530,8 @@ main section .imagen {
 }
 
 .sesion {
-  background-color: var(--color-secundario);
-  color: var(--font-color-primario);
+  background-color: #9daeff;
+  color: black;
   padding: 20px;
   text-align: center;
 }
@@ -480,7 +562,7 @@ main section .imagen {
 .sesion form .subir {
   width: 100%;
   padding: 10px;
-  background-color: #BC8034;
+  background-color: #bc8034;
   color: white;
   border: none;
   border-radius: 5px;
@@ -496,35 +578,34 @@ main section .imagen {
   margin-bottom: 20px;
 }
 .sesion p .recuperar {
-  color: #BC8034;
   transition: color 0.3s;
 }
 .sesion p .recuperar:hover {
-  color: #946529;
+  color: #e6e6e6;
 }
 .sesion h3 {
   font-size: 18px;
   margin-bottom: 10px;
 }
 .sesion .crear-cuenta {
-  color: #BC8034;
   font-size: 16px;
   transition: color 0.3s;
   text-decoration: none;
 }
 .sesion .crear-cuenta:hover {
-  color: #946529;
+  color: #e6e6e6;
 }
 
 .footer {
-  background-color: #BC8034;
-  color: white;
+  background-color: #bc8034;
+  color: black;
   text-align: center;
   padding: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
-.footer-about h3, .footer-about p {
-  color: white;
+.footer-about h3,
+.footer-about p {
+  color: black;
 }
 .footer .redes {
   list-style: none;
@@ -538,11 +619,11 @@ main section .imagen {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: white;
+  color: black;
 }
 .footer .redes li a:hover {
   text-decoration: underline;
-  color: #98446B;
+  color: #98446b;
 }
 .footer .redes li a .red_ico {
   width: 24px;

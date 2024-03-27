@@ -1,71 +1,109 @@
-.servicios {
-    background-color: var(--color-secundario);
-    color: var(--font-color-primario);
-    padding: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    align-items: start;
-    box-sizing: border-box;
-    height: fit-content;
 
-  
+.servicios {
+  background-color: var(--color-secundario);
+  color: var(--font-color-primario);
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+  box-sizing: border-box;
+  height: fit-content;
+
   .grid-servicios {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-
+    section {
+      opacity: 0; // Inicialmente oculto hasta que comience la animación
+      // animation: slideInFromRight 1s ease-out forwards !important;
+    }
+    section:nth-of-type(1) {
+      animation-delay: 0.5s;
+    }
+    
+    section:nth-of-type(2) {
+      animation-delay: 1s;
+    }
+    
+    section:nth-of-type(3) {
+      animation-delay: 1.5s;
+    }
+    
+    section:nth-of-type(4) {
+      animation-delay: 2s;
+    }
     @include mq-tablet {
-        grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
     }
     @include mq-mobile {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
     }
-
   }
-  
-  .servicio{
-    &-info{
-        height: fit-content;
+
+  .servicio {
+    &-info {
+      height: fit-content;
+      width: 100%;
+      & h2 {
+        font-size: 24px;
+        margin: 0 0 10px 0;
+        height: 4em;
+        @include mq-tablet {
+          height: 4rem;
+        }
+        @include mq-mobile {
+          height: 6rem;
+        }
+      }
+      & p {
+        font-size: 16px;
         width: 100%;
-        & h2{
-            font-size: 24px;
-            margin: 0 0 10px 0;
+        height: 13rem;
+        text-align: justify;
+        @include mq-tablet {
+          height: 9rem;
         }
-        & p{
-           
-            font-size: 16px;
-            width: 100%;
-            height: fit-content;
-            text-align: justify;
-              
+        @include mq-mobile {
+          height: fit-content;
         }
       }
-    &-imagen{
-        height: 50%;
-        & img{
-            width: 15em;
-            height: 15em;
-            border-radius: 8px;
-            object-fit: cover;
-            @include mq-tablet {
-                width: 100%;
-                height: 10em;
-            }
-            @include mq-mobile {
-                width: 100%;
-                height: 10em;
-            }
+    }
+    &-imagen {
+      height: 50%;
+      & img {
+        width: 15em;
+        height: 15em;
+        border-radius: 8px;
+        object-fit: cover;
+        @include mq-tablet {
+          width: 100%;
+          height: 10em;
+        }
+        @include mq-mobile {
+          width: 100%;
+          height: 10em;
         }
       }
+    }
     @include mq-tablet {
-        height: fit-content;
+      height: fit-content;
     }
     @include mq-mobile {
-        height: fit-content;
+      height: fit-content;
     }
   }
-  
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

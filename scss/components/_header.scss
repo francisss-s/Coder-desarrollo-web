@@ -1,124 +1,123 @@
 header {
-    background-color: $primary-color;
+  background-color: $primary-color;
+  color: $primary-font-color;
+  text-align: center;
+  padding: 20px;
+
+  &.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  & nav {
     color: $primary-font-color;
-    text-align: center;
     padding: 20px;
 
-    &.logo {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        display: inline-block;
+    & ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+
+      @include mq-mobile {
+        float: none;
+        display: block;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+        overflow: hidden;
+      }
+
+      @include mq-tablet {
+        float: none;
+        display: block;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+        overflow: hidden;
+      }
     }
 
-    & nav {
+    & li {
+      @include contraste-color($secondary-color);
+      float: left;
+      text-decoration: none;
+      border: 1px solid $hover-color;
+      border-radius: 8px;
+      background-color: $secondary-color;
+      display: block;
+      text-align: center;
+      width: 10rem;
+      height: 2rem;
+
+      @include mq-mobile {
+        display: block;
+        float: none;
+        width: 100%;
+      }
+
+      @include mq-tablet {
+        display: block;
+        float: none;
+        width: 100%;
+      }
+    }
+    & .selected {
+      padding-top: 5px;
+    }
+    & a {
+      @include contraste-color($accent-color);
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-color: $accent-color;
+      text-decoration: none;
+      text-align: center;
+      z-index: 1;
+      padding-top: 5px;
+
+      &:hover {
+        @include contraste-color($hover-color);
+        background-color: $hover-color;
         color: $primary-font-color;
-        padding: 20px;
+      }
 
-        & ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            display: flex;
-            justify-content: flex-end;
+      @include mq-mobile {
+        text-align: center;
+      }
 
-            @include mq-mobile {
-                float: none;
-                display: block;
-                max-height: 0;
-                transition: max-height 0.5s ease-out;
-                overflow: hidden;
-            }
+      @include mq-tablet {
+        text-align: center;
+      }
+    }
+  }
 
-            @include mq-tablet {
-                float: none;
-                display: block;
-                max-height: 0;
-                transition: max-height 0.5s ease-out;
-                overflow: hidden;
-            }
-        }
+  & .menu-toggle {
+    display: none;
+  }
 
-        & li {
-            @include contraste-color($secondary-color);
-            float: left;
-            text-decoration: none;
-            border: 1px solid $hover-color;
-            border-radius: 8px;
-            background-color: $secondary-color;
-            display: block;
-            text-align: center;
-            width: 10rem;
-            height: 2rem;
+  & .menu-button {
+    @include contraste-color($accent-color);
+    display: none;
+    background-color: $accent-color;
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
 
-            @include mq-mobile {
-                display: block;
-                float: none;
-                width: 100%;
-            }
-
-            @include mq-tablet {
-                display: block;
-                float: none;
-                width: 100%;
-            }
-              
-            
-        }
-
-        & a {
-            @include contraste-color($accent-color);
-            display: block;
-            height: 100%;
-            width: 100%;
-            background-color: $accent-color;
-            text-decoration: none;
-            text-align: center;
-            z-index: 1;
-
-            &:hover {
-                @include contraste-color($hover-color);
-                background-color: $hover-color;
-                color: $primary-font-color;
-                
-            }
-
-            
-            @include mq-mobile {
-                text-align: center;
-            }
-
-            @include mq-tablet {
-                text-align: center;
-            }
-        }
+    @include mq-mobile {
+      display: block;
     }
 
-    & .menu-toggle {
-        display: none;
+    @include mq-tablet {
+      display: block;
     }
+  }
 
-    & .menu-button {
-        @include contraste-color($accent-color);
-        display: none;
-        background-color: $accent-color;
-        padding: 10px;
-        margin: 20px;
-        cursor: pointer;
-
-        @include mq-mobile {
-            display: block;
-        }
-
-        @include mq-tablet {
-            display: block;
-        }
-    }
-
-    // Específico para cuando el menu-toggle está chequeado
-    & .menu-toggle:checked + .menu-button + nav ul {
-        max-height: 500px;
-        transition: max-height 0.5s ease-in;
-    }
+  // Específico para cuando el menu-toggle está chequeado
+  & .menu-toggle:checked + .menu-button + nav ul {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+  }
 }

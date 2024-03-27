@@ -19,6 +19,9 @@
                 
             }
             &-img{
+                object-fit: cover;
+                width: 20rem;
+                height: 15rem;
                 @include mq-mobile{
                     display: none;
                 }
@@ -63,7 +66,7 @@
             .subir {
                 padding: 10px;
                 background-color: $primary-color;
-                color: $tertiary-font-color;
+                color: $secondary-font-color;
                 border: none;
                 border-radius: 5px;
                 font-size: 18px;

@@ -1,51 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
 // Variables
-$primary-color: #BC8034;        // Color principal
-$secondary-color: #9DAEFF;      // Color secundario
-$tertiary-color: #D9CAB3;       // Color terciario
-$accent-color: #3F375C;         // Color de acento
-$hover-color: #98446B;          // Color de hover
-$primary-font-color: #3F375C;   // Color de fuente principal
-$secondary-font-color: black;   // Color de fuente secundario
-$tertiary-font-color: white;    // Color de fuente terciario
-$main-font: "Roboto", sans-serif; // Fuente principal
+$primary-color: #bc8034; // Color principal
+$secondary-color: #9daeff; // Color secundario
+$tertiary-color: #d9cab3; // Color terciario
+$accent-color: #3f375c; // Color de acento
+$hover-color: #98446b; // Color de hover
+$primary-font-color: #3f375c; // Color de fuente principal
+$secondary-font-color: black; // Color de fuente secundario
+$tertiary-font-color: white; // Color de fuente terciario
 
+$main-font: "Nunito Sans", sans-serif; // Fuente principal
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $main-font;
 }
 
-ul,ol{
-    list-style: none;
+ul,
+ol {
+  list-style: none;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-img{
-    max-width: 100%;
-    height: auto;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 @mixin mq-mobile {
-    @media (min-width:350px) and (max-width: 767px) {
-        @content;
-    }
-}
-  
-@mixin mq-tablet {
-    @media (min-width: 768px) and (max-width: 1200px) {
-        @content;
-    }
+  @media (min-width: 350px) and (max-width: 767px) {
+    @content;
+  }
 }
 
-@mixin contraste-color($bg){
-    @if (lightness($bg) > 50){
-        color: $secondary-font-color
-    }
-    @else{
-        color: $tertiary-font-color
-    }
+@mixin mq-tablet {
+  @media (min-width: 768px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin contraste-color($bg) {
+  @if (lightness($bg) > 50) {
+    color: $secondary-font-color;
+  } @else {
+    color: $tertiary-font-color;
+  }
+}
+
+@function obtener-color-contraste($bg) {
+  @if (lightness($bg) > 50) {
+    @return $secondary-font-color;
+  } @else {
+    @return $tertiary-font-color;
+  }
 }
